@@ -1,6 +1,31 @@
 # Neutrophil Temporal Dynamics Analysis
 
-A comprehensive single-cell RNA-seq analysis pipeline for investigating temporal transcriptional dynamics in neutrophils using deep representation learning (DRVI).
+## Background
+
+Neutrophils are the most abundant white blood cells and play critical roles in innate immunity and inflammation. However, their short lifespan and fragility make them challenging to study with single-cell RNA sequencing (scRNA-seq) technologies. The original study ([Comparison of single-cell RNA-seq methods](https://doi.org/10.1016/j.crmeth.2025.101173)) systematically compared multiple scRNA-seq platforms for their ability to capture and profile neutrophils from clinical samples.
+
+**Key findings from the original study:**
+- Compared various single-cell capture technologies for neutrophil profiling
+- Identified optimal protocols for preserving neutrophil transcriptomes
+- Used 10X Genomics Chromium Single Cell Gene Expression **Flex** kit for high-quality neutrophil capture
+
+**The FLEX Time-Course Experiment:**
+
+To understand how neutrophils respond to sample processing time, the authors performed a time-course experiment using the Flex technology. Blood samples were collected and cells were profiled at multiple time points (0h, 2h, 4h, 6h, 8h, and 24h) before sequencing. This experimental design allows investigation of:
+- Transcriptional changes induced by sample handling
+- Stress response signatures over time
+- Technical vs. biological variation in neutrophil gene expression
+
+## Motivation for This Analysis
+
+While the original study focused on method comparison, **this repository performs an in-depth temporal analysis** of the neutrophil time-course data using advanced computational methods. Specifically, we apply **DRVI (Disentangled Representation Variational Inference)** to:
+
+1. **Disentangle biological from technical variation** - Separate true temporal dynamics from donor-specific effects
+2. **Identify time-varying transcriptional programs** - Discover which biological pathways change systematically over time
+3. **Characterize stress responses** - Quantify immediate-early gene activation and cellular stress signatures
+4. **Enable biological interpretation** - Map latent dimensions to specific genes and pathways
+
+This analysis demonstrates how modern deep learning approaches can extract deeper biological insights from time-series single-cell data.
 
 ## 📋 Overview
 
@@ -172,9 +197,11 @@ Identifies biological functions enriched in genes that increase (time+) or decre
 
 ## 📚 References
 
-1. **DRVI Method:** See `drvi.pdf` for detailed methodology
-2. **MP5 Stress Response:** See `mp5_stress.pdf` for stress gene signatures
-3. **Data Source:** See `Comparison-of-single-cell-RNA-seq-methods-to-enabl.pdf`
+1. **Original Data Source:** Comparison of single-cell RNA-seq methods to enable transcriptome profiling of neutrophils in clinical samples. *Cell Reports Methods* (2025). DOI: [10.1016/j.crmeth.2025.101173](https://doi.org/10.1016/j.crmeth.2025.101173)
+
+2. **DRVI Method:** Lotfollahi et al. Disentangled Representation Variational Inference for single-cell data. See `drvi.pdf` for methodology details.
+
+3. **MP5 Stress Response Signatures:** See `mp5_stress.pdf` for background on immediate-early gene stress markers.
 
 ## 🤝 Contributing
 
