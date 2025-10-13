@@ -181,20 +181,6 @@ Identifies biological functions enriched in genes that increase (time+) or decre
 - Metabolic changes
 - Cell cycle dynamics
 
-## 🛠️ Customization
-
-### Adjusting Parameters
-
-**Cell type discovery (BloodCellAtlas.ipynb):**
-- Latent dimensions: `n_latent=16`
-- Leiden resolution: `resolution=0.2`
-- HVG count: `n_top_genes=2000`
-
-**Temporal analysis (NeutrophilTimeLatents.ipynb):**
-- Latent dimensions: `n_latent=48`
-- HVG count: `n_top_genes=3000`
-- FDR threshold: `fdr_bh < 0.01`
-
 ## 📚 References
 
 1. **Original Data Source:** Comparison of single-cell RNA-seq methods to enable transcriptome profiling of neutrophils in clinical samples. *Cell Reports Methods* (2025). DOI: [10.1016/j.crmeth.2025.101173](https://doi.org/10.1016/j.crmeth.2025.101173)
