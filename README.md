@@ -199,7 +199,7 @@ Identifies biological functions enriched in genes that increase (time+) or decre
 
 1. **Original Data Source:** Comparison of single-cell RNA-seq methods to enable transcriptome profiling of neutrophils in clinical samples. *Cell Reports Methods* (2025). DOI: [10.1016/j.crmeth.2025.101173](https://doi.org/10.1016/j.crmeth.2025.101173)
 
-2. **DRVI Method:** Lotfollahi et al. Disentangled Representation Variational Inference for single-cell data. See `drvi.pdf` for methodology details.
+2. **DRVI Method:** Lotfollahi et al. Disentangled Representation Variational Inference for single-cell data. *bioRxiv* (2024). DOI: [10.1101/2024.11.06.622266](https://doi.org/10.1101/2024.11.06.622266)
 
 3. **MP5 Stress Response Signatures:** See `mp5_stress.pdf` for background on immediate-early gene stress markers.
 
@@ -211,9 +211,6 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 👥 Authors
-
-[Your Name] - [Your Email/GitHub]
 
 ## 🙏 Acknowledgments
 
@@ -223,7 +220,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📧 Contact
 
-For questions or collaborations, please contact [your email] or open an issue on GitHub.
+For questions or collaborations, open an issue on GitHub.
 
 ---
 
