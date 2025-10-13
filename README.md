@@ -2,7 +2,7 @@
 
 ## Background
 
-Neutrophils are the most abundant white blood cells and play critical roles in innate immunity and inflammation. However, their short lifespan and fragility make them challenging to study with single-cell RNA sequencing (scRNA-seq) technologies. The original study ([Comparison of single-cell RNA-seq methods](https://doi.org/10.1016/j.crmeth.2025.101173)) systematically compared multiple scRNA-seq platforms for their ability to capture and profile neutrophils from clinical samples.
+Neutrophils are the most abundant white blood cells and play critical roles in innate immunity and inflammation. However, their short lifespan and fragility make them challenging to study with single-cell RNA sequencing (scRNA-seq) technologies. The [original study]([url](https://doi.org/10.1016/j.crmeth.2025.101173)) methods systematically compared multiple scRNA-seq platforms for their ability to capture and profile neutrophils from clinical samples.
 
 **Key findings from the original study:**
 - Compared various single-cell capture technologies for neutrophil profiling
