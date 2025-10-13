@@ -74,12 +74,9 @@ neutrophils/
 ├── requirements.txt                   # Python dependencies
 ├── LICENSE                            # MIT License
 ├── .gitignore                         # Git ignore rules
-├── notebooks/                         # Analysis notebooks
-│   ├── BloodCellAtlas.ipynb          # Step 1: Multi-cell-type atlas
-│   └── NeutrophilTimeLatents.ipynb   # Step 2: Neutrophil temporal analysis
-├── drvi.pdf                          # DRVI method reference
-├── mp5_stress.pdf                    # MP5 stress response reference
-└── Comparison-of-single-cell-...pdf  # Data source reference
+└── notebooks/                         # Analysis notebooks
+    ├── BloodCellAtlas.ipynb          # Step 1: Multi-cell-type atlas
+    └── NeutrophilTimeLatents.ipynb   # Step 2: Neutrophil temporal analysis
 ```
 
 ## 🚀 Getting Started
@@ -187,8 +184,6 @@ Identifies biological functions enriched in genes that increase (time+) or decre
 
 2. **DRVI Method:** Moinfar, A.A. et al. Unsupervised Deep Disentangled Representation of Single-Cell Omics. *bioRxiv* (2025). DOI: [10.1101/2024.11.06.622266](https://doi.org/10.1101/2024.11.06.622266)
 
-3. **MP5 Stress Response Signatures:** See `mp5_stress.pdf` for background on immediate-early gene stress markers.
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit issues or pull requests.
@@ -206,7 +201,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📧 Contact
 
-For questions or collaborations, open an issue on GitHub.
+For questions or collaborations, please open an issue on GitHub.
 
 ---
 
