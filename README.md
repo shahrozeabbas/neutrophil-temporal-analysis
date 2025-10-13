@@ -9,7 +9,7 @@ Neutrophils are the most abundant white blood cells and play critical roles in i
 - Identified optimal protocols for preserving neutrophil transcriptomes
 - Used 10X Genomics Chromium Single Cell Gene Expression **Flex** kit for high-quality neutrophil capture
 
-**The FLEX Time-Course Experiment:**
+**The 10X Flex Time-Course Experiment:**
 
 To understand how neutrophils respond to sample processing time, the authors performed a time-course experiment using the Flex technology. Blood samples were collected and cells were profiled at multiple time points (0h, 2h, 4h, 6h, 8h, and 24h) before sequencing. This experimental design allows investigation of:
 - Transcriptional changes induced by sample handling
@@ -29,7 +29,7 @@ This analysis demonstrates how modern deep learning approaches can extract deepe
 
 ## 📋 Overview
 
-This project analyzes time-course FLEX single-cell RNA-seq data from blood cells to:
+This project analyzes time-course 10X Flex single-cell RNA-seq data from blood cells to:
 1. Build a multi-cell-type blood atlas while regressing out technical variation
 2. Focus on neutrophils and identify temporal transcriptional programs
 3. Discover biological pathways activated or suppressed over time
@@ -196,7 +196,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🙏 Acknowledgments
 
 - DRVI developers for the methodology and software
-- Original data authors from the FLEX time-course study
+- Original data authors from the 10X Flex time-course study
 - Scanpy and scvi-tools communities
 
 ## 📧 Contact
