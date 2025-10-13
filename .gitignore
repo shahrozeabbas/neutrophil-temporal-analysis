@@ -1,0 +1,59 @@
+# Data files (too large for git)
+*.h5ad
+*.h5
+*.mtx
+*.tsv
+*.csv
+
+# Large PDF files (reference papers)
+*.pdf
+
+# Model checkpoints
+*.pt
+*.pth
+*.ckpt
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Output directories
+results/
+figures/
+outputs/
+
+# Google Drive mount (Colab)
+/content/drive/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+
