@@ -91,8 +91,8 @@ neutrophils/
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/neutrophils.git
-cd neutrophils
+git clone https://github.com/shahrozeabbas/neutrophil-temporal-analysis
+cd neutrophil-temporal-analysis
 ```
 
 2. Install dependencies:
