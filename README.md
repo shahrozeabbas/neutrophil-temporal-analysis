@@ -2,7 +2,7 @@
 
 ## Background
 
-Neutrophils are the most abundant white blood cells and play critical roles in innate immunity and inflammation. However, their short lifespan and fragility make them challenging to study with single-cell RNA sequencing (scRNA-seq) technologies. The [original study](https://doi.org/10.1016/j.crmeth.2025.101173) systematically compared multiple scRNA-seq platforms for their ability to capture and profile neutrophils from clinical samples.
+Neutrophils are tyically abundant white blood cells and play critical roles in innate immunity and inflammation. However, their short lifespan and fragility make them challenging to study with single-cell RNA sequencing (scRNA-seq) technologies. The [original study](https://doi.org/10.1016/j.crmeth.2025.101173) systematically compared multiple scRNA-seq platforms for their ability to capture and profile neutrophils from clinical samples.
 
 **Key findings from the original study:**
 - Compared various single-cell capture technologies for neutrophil profiling
@@ -11,26 +11,26 @@ Neutrophils are the most abundant white blood cells and play critical roles in i
 
 **The 10X Flex Time-Course Experiment:**
 
-To understand how neutrophils respond to sample processing time, the authors performed a time-course experiment using the Flex technology. Blood samples were collected and cells were profiled at multiple time points (0h, 2h, 4h, 6h, 8h, and 24h) before sequencing. This experimental design allows investigation of:
+To understand how neutrophils respond to sample processing time, the authors performed a time-course experiment using the Flex technology. Blood samples were collected and cells were profiled at multiple time points (0h, 2h, 4h, 6h, 8h, and 24h) from 3 donors before sequencing. This experimental design allows investigation of:
 - Transcriptional changes induced by sample handling
 - Stress response signatures over time
 - Technical vs. biological variation in neutrophil gene expression
 
 ## Motivation for This Analysis
 
-While the original study focused on method comparison, **this repository performs an in-depth temporal analysis** of the neutrophil time-course data using advanced computational methods. Specifically, we apply **DRVI (Disentangled Representation Variational Inference)** to:
+While the original study focused on method comparison, **this repository performs an in-depth temporal analysis** of the neutrophil time-course data using deep learning methods. Specifically, I applied **DRVI (Disentangled Representation Variational Inference)** to:
 
 1. **Disentangle biological from technical variation** - Separate true temporal dynamics from donor-specific effects
 2. **Identify time-varying transcriptional programs** - Discover which biological pathways change systematically over time
 3. **Characterize stress responses** - Quantify immediate-early gene activation and cellular stress signatures
 4. **Enable biological interpretation** - Map latent dimensions to specific genes and pathways
 
-This analysis demonstrates how modern deep learning approaches can extract deeper biological insights from time-series single-cell data.
+This analysis demonstrates how modern deep learning approaches can resolve deeper biological insights from time-series single-cell data.
 
 ## 📋 Overview
 
 This project analyzes time-course 10X Flex single-cell RNA-seq data from blood cells to:
-1. Build a multi-cell-type blood atlas while regressing out technical variation
+1. Build a blood cell-type atlas while regressing out technical variation
 2. Focus on neutrophils and identify temporal transcriptional programs
 3. Discover biological pathways activated or suppressed over time
 
@@ -41,7 +41,7 @@ This project analyzes time-course 10X Flex single-cell RNA-seq data from blood c
 ```
 Raw 10X Data
      ↓
-[notebooks/BloodCellAtlas.ipynb]
+[notebooks/01_build_atlas.ipynb]
   • Quality control & doublet removal
   • DRVI training (16 latent dims)
   • Cell type clustering (Leiden)
@@ -49,34 +49,34 @@ Raw 10X Data
      ↓
 all_celltypes.h5ad
      ↓
-[notebooks/NeutrophilTimeLatents.ipynb]
+[notebooks/02_learn_neutrophil_latents.ipynb]
   • Extract neutrophils
   • High-resolution DRVI (48 latent dims)
   • OLS regression for temporal latents
   • Gene-latent associations
   • Pathway enrichment analysis
      ↓
-Results & Biological Insights
+Results & Insights
 ```
 
 ## 📊 Key Findings
 
 - **Time Points:** 0h, 2h, 4h, 6h, 8h, 24h
 - **Significant temporal latent dimensions:** Identified via OLS regression (FDR < 0.01)
-- **Stress response signatures:** MP5 gene set (FOS, JUN, EGR1, ATF3, etc.)
+- **Visualize stress response signatures (MP5):** MP5 gene set (FOS, JUN, EGR1, ATF3, etc.)
 - **Pathway enrichment:** MSigDB Hallmark, KEGG, Reactome, GO Biological Process
 
 ## 📁 Repository Structure
 
 ```
 neutrophils/
-├── README.md                          # This file
-├── requirements.txt                   # Python dependencies
-├── LICENSE                            # MIT License
-├── .gitignore                         # Git ignore rules
-└── notebooks/                         # Analysis notebooks
-    ├── BloodCellAtlas.ipynb          # Step 1: Multi-cell-type atlas
-    └── NeutrophilTimeLatents.ipynb   # Step 2: Neutrophil temporal analysis
+├── README.md                               # This file
+├── requirements.txt                        # Python dependencies
+├── LICENSE                                 # MIT License
+├── .gitignore                              # Git ignore rules
+└── notebooks/                              # Analysis notebooks
+    ├── 01_build_atlas.ipynb                # Step 1: Multi-cell-type atlas
+    └── 02_learn_neutrophil_latents.ipynb   # Step 2: Neutrophil temporal analysis
 ```
 
 ## 🚀 Getting Started
@@ -105,7 +105,7 @@ pip install -r requirements.txt
 - `scanpy` - Single-cell analysis
 - `drvi-py` - Deep representation learning
 - `scvi-tools` - Variational inference framework
-- `gseapy` - Pathway enrichment analysis
+- `gseapy` - Pathway ORA analysis
 - `decoupler` - Pseudobulk aggregation
 - `statsmodels` - Statistical modeling
 
@@ -113,7 +113,7 @@ pip install -r requirements.txt
 
 ### Step 1: Build Blood Cell Atlas
 
-Open and run `notebooks/BloodCellAtlas.ipynb`:
+Open and run `notebooks/01_build_atlas.ipynb`:
 - Loads raw 10X data
 - Performs QC, doublet detection, and filtering
 - Trains DRVI model with batch correction
@@ -122,18 +122,18 @@ Open and run `notebooks/BloodCellAtlas.ipynb`:
 
 ### Step 2: Neutrophil Temporal Analysis
 
-Open and run `notebooks/NeutrophilTimeLatents.ipynb`:
+Open and run `notebooks/02_learn_neutrophil_latents.ipynb`:
 - Loads processed atlas and extracts neutrophils
 - Trains high-resolution DRVI (48 dimensions)
 - Identifies time-varying latent dimensions using OLS regression
 - Associates genes with temporal patterns
-- Performs pathway enrichment
+- Performs pathway over-representation analysis (ORA)
 
 ## 🔍 Methods
 
 ### DRVI (Disentangled Representation Variational Inference)
 
-DRVI is a deep generative model that learns interpretable latent representations of single-cell data while accounting for technical covariates. Key advantages:
+DRVI is a deep generative model that learns interpretable latent representations of single-cell data. Key advantages:
 - Learns biologically meaningful latent dimensions
 - Regresses out batch effects and donor variation
 - Enables interpretation via latent traversal
@@ -154,29 +154,28 @@ DRVI is a deep generative model that learns interpretable latent representations
 
 ## 📊 Data
 
-The analysis uses time-course FLEX single-cell RNA-seq data of blood cells across multiple donors and time points. 
+The analysis uses time-course 10X Flex single-cell RNA-seq data of blood cells across multiple donors and time points. 
 
-**Source:** Comparison of single-cell RNA-seq methods (see `Comparison-of-single-cell-RNA-seq-methods-to-enabl.pdf`)
+**Source:** Comparison of single-cell RNA-seq methods to enable transcriptome profiling of neutrophils in clinical samples (see references below)
 
 **Data Structure:**
-- Multiple donors
+- 3 donors
 - 6 time points: 0h, 2h, 4h, 6h, 8h, 24h
 - Blood tissue
-- 10X Genomics format
+- 10X Genomics platform
 
-**Note:** Raw data files are not included in this repository due to size. Contact the authors or refer to the original publication for data access.
+**Note:** Data files are not included in this repository due to size. 
 
 ## 📈 Results Interpretation
 
 ### Latent Dimensions
-Each latent dimension captures a coordinated gene expression program. Dimensions with significant time coefficients represent temporal biological processes.
+Each latent dimension captures a coordinated gene expression program. The OLS regression is a simple linear regression to determine if certain latents capture the signal associated with time. Dimensions with significant time coefficients represent temporal change in neutrophil transcriptomes consistent with what the original authors reported. 
 
 ### Pathway Enrichment
 Identifies biological functions enriched in genes that increase (time+) or decrease (time-) over the time course, revealing:
 - Immune activation pathways
 - Stress response programs
-- Metabolic changes
-- Cell cycle dynamics
+
 
 ## 📚 References
 
