@@ -202,6 +202,6 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 
 For questions or collaborations, please open an issue on GitHub.
 
-**Note:** This is a computational analysis repository. For questions about the original data or experimental methods, please refer to the original publication.
+Note: This is a computational analysis repository. For questions about the original data or experimental methods, please refer to the original publication.
 ---
 
