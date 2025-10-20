@@ -2,7 +2,7 @@
 
 ## Background
 
-Neutrophils are tyically abundant white blood cells and play critical roles in innate immunity and inflammation. However, their short lifespan and fragility make them challenging to study with single-cell RNA sequencing (scRNA-seq) technologies. The [original study](https://doi.org/10.1016/j.crmeth.2025.101173) systematically compared multiple scRNA-seq platforms for their ability to capture and profile neutrophils from clinical samples.
+Neutrophils are tyically abundant white blood cells and play critical roles in innate immunity and inflammation. However, their short lifespan and fragility make them challenging to study with single-cell RNA sequencing (scRNA-seq) technologies. The [original study](https://www.cell.com/cell-reports-methods/fulltext/S2667-2375(25)00209-7#sec-9-1) systematically compared multiple scRNA-seq platforms for their ability to capture and profile neutrophils from clinical samples.
 
 **Key findings from the original study:**
 - Compared various single-cell capture technologies for neutrophil profiling
@@ -179,7 +179,7 @@ Identifies biological functions enriched in genes that increase (time+) or decre
 
 ## 📚 References
 
-1. **Original Data Source:** Comparison of single-cell RNA-seq methods to enable transcriptome profiling of neutrophils in clinical samples. *Cell Reports Methods* (2025). DOI: [10.1016/j.crmeth.2025.101173](https://doi.org/10.1016/j.crmeth.2025.101173)
+1. **Original Data Source:** Comparison of single-cell RNA-seq methods to enable transcriptome profiling of neutrophils in clinical samples. *Cell Reports Methods* (2025). DOI: [10.1016/j.crmeth.2025.101173](https://www.cell.com/cell-reports-methods/fulltext/S2667-2375(25)00209-7#sec-9-1)
 
 2. **DRVI Method:** Moinfar, A.A. et al. Unsupervised Deep Disentangled Representation of Single-Cell Omics. *bioRxiv* (2025). DOI: [10.1101/2024.11.06.622266](https://doi.org/10.1101/2024.11.06.622266)
 
