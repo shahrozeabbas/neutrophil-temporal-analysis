@@ -34,6 +34,7 @@ ENV/
 .vscode/
 .idea/
 .cursor/
+.cursorignore
 *.swp
 *.swo
 *~
