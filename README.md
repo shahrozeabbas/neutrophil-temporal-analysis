@@ -2,7 +2,7 @@
 
 ## Background
 
-Neutrophils are tyically abundant white blood cells and play critical roles in innate immunity and inflammation. However, their short lifespan and fragility make them challenging to study with single-cell RNA sequencing (scRNA-seq) technologies. The [original study](https://www.cell.com/cell-reports-methods/fulltext/S2667-2375(25)00209-7#sec-9-1) systematically compared multiple scRNA-seq platforms for their ability to capture and profile neutrophils from clinical samples.
+Neutrophils are typically abundant white blood cells and play critical roles in innate immunity and inflammation. However, their short lifespan and fragility make them challenging to study with single-cell RNA sequencing (scRNA-seq) technologies. The [original study](https://www.cell.com/cell-reports-methods/fulltext/S2667-2375(25)00209-7#sec-9-1) systematically compared multiple scRNA-seq platforms for their ability to capture and profile neutrophils from clinical samples.
 
 **Key findings from the original study:**
 - Compared various single-cell capture technologies for neutrophil profiling
@@ -45,12 +45,16 @@ Raw 10X Data
   • Quality control & doublet removal
   • DRVI training (16 latent dims)
   • Cell type clustering (Leiden)
-  • Identify neutrophils (cluster 2)
+  • Identify neutrophils (cluster 1)
      ↓
-all_celltypes.h5ad
+  Outputs:
+    • preprocessed_atlas_anndata.h5ad (QC'd data)
+    • all_celltypes.h5ad (annotated atlas)
+    • atlas_metadata.tsv (cell type labels)
      ↓
 [notebooks/02_learn_neutrophil_latents.ipynb]
-  • Extract neutrophils
+  • Load preprocessed data + metadata
+  • Extract neutrophils (cluster 1)
   • High-resolution DRVI (48 latent dims)
   • OLS regression for temporal latents
   • Gene-latent associations
@@ -62,9 +66,9 @@ Results & Insights
 ## 📊 Key Findings
 
 - **Time Points:** 0h, 2h, 4h, 6h, 8h, 24h
-- **Significant temporal latent dimensions:** Identified via OLS regression (FDR < 0.01)
+- **Significant temporal latent dimensions:** Identified via OLS regression (FDR < 0.05)
 - **Visualize stress response signatures (MP5):** MP5 gene set (FOS, JUN, EGR1, ATF3, etc.)
-- **Pathway enrichment:** MSigDB Hallmark, KEGG, Reactome, GO Biological Process
+- **Pathway enrichment:** MSigDB Hallmark gene sets
 
 ## 📁 Repository Structure
 
@@ -145,7 +149,7 @@ DRVI is a deep generative model that learns interpretable latent representations
 - Pseudobulk aggregation by donor × time point
 - OLS regression: `latent ~ time + donor`
 - Multiple testing correction (Benjamini-Hochberg FDR)
-- Identification of latent dimensions significantly changing over time (FDR < 0.01)
+- Identification of latent dimensions significantly changing over time (FDR < 0.05)
 
 **Gene-Latent Association:**
 - Latent traversal to identify genes responsive to each dimension
