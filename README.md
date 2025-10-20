@@ -191,10 +191,6 @@ Identifies biological functions enriched in genes that increase (time+) or decre
 
 Contributions are welcome! Please feel free to submit issues or pull requests.
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 
 ## 🙏 Acknowledgments
 
@@ -206,7 +202,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For questions or collaborations, please open an issue on GitHub.
 
----
-
 **Note:** This is a computational analysis repository. For questions about the original data or experimental methods, please refer to the original publication.
+---
 
