@@ -1,4 +1,4 @@
-# Neutrophil Temporal Dynamics Analysis
+# Disentangling Temporal Variation in Neutrophil Transcriptomes
 
 ## Background
 
