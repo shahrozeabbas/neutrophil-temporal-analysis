@@ -7770,17 +7770,6 @@ INFO:lightning.fabric.utilities.seed:Global seed set to 0
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="DRVI-Model-Training">DRVI Model Training<a class="anchor-link" href="#DRVI-Model-Training">¶</a></h2><p>A DRVI model with 48 latent dimensions is trained to capture fine-grained temporal variation within neutrophils. The model regresses out donor effects while preserving time-dependent signals, enabling identification of temporal transcriptional programs.</p>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7814,7 +7803,7 @@ INFO:lightning.fabric.utilities.seed:Global seed set to 0
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Training-Assessment">Training Assessment<a class="anchor-link" href="#Training-Assessment">¶</a></h2><p>Training convergence is monitored and latent dimension statistics are examined to ensure the model has learned meaningful representations.</p>
+<h2 id="DRVI-Model-Training">DRVI Model Training<a class="anchor-link" href="#DRVI-Model-Training">¶</a></h2><p>A DRVI model with 48 latent dimensions is trained to capture fine-grained temporal variation within neutrophils. The model regresses out donor effects while preserving time-dependent signals, enabling identification of temporal transcriptional programs.</p>
 </div>
 </div>
 </div>
@@ -7926,6 +7915,17 @@ INFO:lightning.pytorch.utilities.rank_zero:`Trainer.fit` stopped: `max_epochs=40
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Training-Assessment">Training Assessment<a class="anchor-link" href="#Training-Assessment">¶</a></h2><p>Training convergence is monitored and latent dimension statistics are examined to ensure the model has learned meaningful representations.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8008,7 +8008,7 @@ INFO:lightning.pytorch.utilities.rank_zero:`Trainer.fit` stopped: `max_epochs=40
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Batch-Effect-Assessment">Batch Effect Assessment<a class="anchor-link" href="#Batch-Effect-Assessment">¶</a></h3><p>The UMAP is visualized colored by donor, time point, and Leiden clusters to confirm that the clustering structure reflects biological variation rather than technical batch effects. Good batch correction should show mixing of donors within clusters while preserving the biological signal of time-dependent variation.</p>
+<h2 id="Batch-Effect-Assessment">Batch Effect Assessment<a class="anchor-link" href="#Batch-Effect-Assessment">¶</a></h2><p>The UMAP is visualized colored by donor, time point, and Leiden clusters to confirm that the clustering structure reflects biological variation rather than technical batch effects. Good batch correction should show mixing of donors within clusters while preserving the biological signal of time-dependent variation.</p>
 </div>
 </div>
 </div>
@@ -8079,6 +8079,17 @@ INFO:lightning.pytorch.utilities.rank_zero:`Trainer.fit` stopped: `max_epochs=40
 <span class="n">drvi</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">tl</span><span class="o">.</span><span class="n">set_latent_dimension_stats</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">embed</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Latent-Dimension-Quality">Latent Dimension Quality<a class="anchor-link" href="#Latent-Dimension-Quality">¶</a></h2><p>Latent dimension statistics are visualized to assess the quality of the learned representation. This plot shows variance and activity levels across all 48 latent dimensions, helping to identify whether dimensions are informative or redundant. Well-trained models should show diverse, active dimensions capturing different aspects of the biological variation.</p>
 </div>
 </div>
 </div>
@@ -8823,7 +8834,7 @@ Finding differential variables per latent dimension ...
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Results">Results<a class="anchor-link" href="#Results">¶</a></h3><p>The table above shows latent dimensions significantly associated with time (FDR &lt; 0.05). Each significant latent represents a distinct transcriptional program that systematically changes across the time course. The slope indicates whether the program increases or decreases with time.</p>
+<h2 id="Results">Results<a class="anchor-link" href="#Results">¶</a></h2><p>The table above shows latent dimensions significantly associated with time (FDR &lt; 0.05). Each significant latent represents a distinct transcriptional program that systematically changes across the time course. The slope indicates whether the program increases or decreases with time.</p>
 </div>
 </div>
 </div>
@@ -8979,7 +8990,8 @@ time- genes: 140
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Gene-Set-Enrichment-Analysis">Gene Set Enrichment Analysis<a class="anchor-link" href="#Gene-Set-Enrichment-Analysis">¶</a></h2><p>For each significant time-associated latent, top genes are extracted in each direction. Latent directions are then mapped to time directions based on whether the latent increases or decreases with time. This yields two gene sets: genes increasing with time and genes decreasing with time, which are tested for pathway enrichment.</p>
+<h2 id="Over-Representation-Analysis-(ORA)">Over-Representation Analysis (ORA)<a class="anchor-link" href="#Over-Representation-Analysis-(ORA)">¶</a></h2><p>For each significant time-associated latent, top genes are extracted in each direction. Latent directions are then mapped to time directions based on whether the latent increases or decreases with time. This yields two gene sets: genes increasing with time and genes decreasing with time, which are tested for pathway over-representation.</p>
+<p><strong>Biological Interpretation:</strong> Genes increasing with time show enrichment for inflammatory and activation pathways, consistent with neutrophil responses to ex vivo culture stress. Genes decreasing with time represent active immune defense functions (complement, inflammatory response), cell proliferation programs (E2F targets), and coagulation activity that are progressively lost during ex vivo culture, reflecting functional decline of neutrophils outside their physiological environment.</p>
 </div>
 </div>
 </div>
@@ -9289,17 +9301,6 @@ time- genes: 140
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>ORA of genes that go down with time doesn't prove to be useful. Some pathways overlap with the ORA of the up genes but overlap is minimal.</p>
 </div>
 </div>
 </div>
@@ -9619,7 +9620,7 @@ time- genes: 140
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Biological-Interpretation">Biological Interpretation<a class="anchor-link" href="#Biological-Interpretation">¶</a></h3><p>Genes increasing with time show enrichment for inflammatory and activation pathways, consistent with neutrophil responses to ex vivo culture stress. Genes decreasing with time represent active immune defense functions (complement, inflammatory response), cell proliferation programs (E2F targets), and coagulation activity that are progressively lost during ex vivo culture, reflecting functional decline of neutrophils outside their physiological environment.</p>
+<h2 id="Temporal-Gene-Expression-Patterns">Temporal Gene Expression Patterns<a class="anchor-link" href="#Temporal-Gene-Expression-Patterns">¶</a></h2><p>The heatmaps below visualize expression patterns of time-associated genes across the time course. Genes are hierarchically clustered to group those with similar temporal dynamics, revealing distinct modules that either increase or decrease over time. These visualizations confirm the temporal trends identified through statistical testing and pathway enrichment.</p>
 </div>
 </div>
 </div>
