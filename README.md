@@ -18,23 +18,23 @@ To understand how neutrophils respond to sample processing time, the authors per
 
 ## Motivation for This Analysis
 
-While the original study focused on method comparison, **this repository performs an in-depth temporal analysis** of the neutrophil time-course data using deep learning methods. Specifically, I applied **DRVI (Disentangled Representation Variational Inference)** to:
+While the original study focused on method comparison, **this repository performs an in-depth temporal analysis** of the neutrophil time-course data using deep learning methods. Specifically, **DRVI (Disentangled Representation Variational Inference) was applied** to:
 
 1. **Disentangle biological from technical variation** - Separate true temporal dynamics from donor-specific effects
 2. **Identify time-varying transcriptional programs** - Discover which biological pathways change systematically over time
 3. **Characterize stress responses** - Quantify immediate-early gene activation and cellular stress signatures
 4. **Enable biological interpretation** - Map latent dimensions to specific genes and pathways
 
-This analysis demonstrates how modern deep learning approaches can resolve deeper biological insights from time-series single-cell data.
+This analysis demonstrates how modern deep learning approaches can be used to resolve deeper biological insights from time-series single-cell data.
 
 ## 📋 Overview
 
-This project analyzes time-course 10X Flex single-cell RNA-seq data from blood cells to:
+Time-course 10X Flex single-cell RNA-seq data from blood cells was analyzed to:
 1. Build a blood cell-type atlas while regressing out technical variation
 2. Focus on neutrophils and identify temporal transcriptional programs
 3. Discover biological pathways activated or suppressed over time
 
-**Key Innovation:** Uses DRVI (Disentangled Representation Variational Inference) to learn interpretable latent representations while controlling for batch effects and donor variation, enabling precise temporal analysis.
+**Key Innovation:** DRVI (Disentangled Representation Variational Inference) was used to learn interpretable latent representations while controlling for batch effects and donor variation, enabling precise temporal analysis.
 
 ## 🔬 Analysis Workflow
 
@@ -65,10 +65,11 @@ Results & Insights
 
 ## 📊 Key Findings
 
-- **Time Points:** 0h, 2h, 4h, 6h, 8h, 24h
-- **Significant temporal latent dimensions:** Identified via OLS regression (FDR < 0.05)
-- **Visualize stress response signatures (MP5):** MP5 gene set (FOS, JUN, EGR1, ATF3, etc.)
-- **Pathway enrichment:** MSigDB Hallmark gene sets
+- **Temporal transcriptional programs identified:** Multiple latent dimensions significantly associated with time were discovered (FDR < 0.05), representing distinct biological programs that change systematically across the 24-hour ex vivo time course
+- **Stress response activation:** Strong enrichment of immediate-early stress response genes (MP5 signature: FOS, JUN, EGR1, ATF3) was observed, with expression increasing over time
+- **Genes increasing with time:** Enriched for inflammatory pathways (TNF-α/NF-κB signaling), stress responses (P53 pathway, hypoxia), and apoptosis
+- **Genes decreasing with time:** Enriched for active immune defense functions (complement, inflammatory response), cell proliferation programs (E2F targets), and coagulation activity, reflecting functional decline during ex vivo culture
+- **Biological interpretation:** Neutrophils undergo progressive functional decline outside their physiological environment, losing immune defense capabilities while activating stress and apoptotic programs
 
 ## 📁 Repository Structure
 
@@ -117,21 +118,21 @@ pip install -r requirements.txt
 
 ### Step 1: Build Blood Cell Atlas
 
-Open and run `notebooks/01_build_atlas.ipynb`:
-- Loads raw 10X data
-- Performs QC, doublet detection, and filtering
-- Trains DRVI model with batch correction
-- Identifies cell type clusters
-- Exports `all_celltypes.h5ad`
+`notebooks/01_build_atlas.ipynb` performs the following steps:
+- Raw 10X data is loaded
+- QC, doublet detection, and filtering are performed
+- DRVI model is trained with batch correction
+- Cell type clusters are identified
+- Annotated atlas files are exported
 
 ### Step 2: Neutrophil Temporal Analysis
 
-Open and run `notebooks/02_learn_neutrophil_latents.ipynb`:
-- Loads processed atlas and extracts neutrophils
-- Trains high-resolution DRVI (48 dimensions)
-- Identifies time-varying latent dimensions using OLS regression
-- Associates genes with temporal patterns
-- Performs pathway over-representation analysis (ORA)
+`notebooks/02_learn_neutrophil_latents.ipynb` performs the following steps:
+- Processed atlas is loaded and neutrophils are extracted
+- High-resolution DRVI (48 dimensions) is trained
+- Time-varying latent dimensions are identified using OLS regression
+- Genes are associated with temporal patterns
+- Pathway over-representation analysis (ORA) is performed
 
 ## 🔍 Methods
 
@@ -176,7 +177,7 @@ The analysis uses time-course 10X Flex single-cell RNA-seq data of blood cells a
 Each latent dimension captures a coordinated gene expression program. The OLS regression is a simple linear regression to determine if certain latents capture the signal associated with time. Dimensions with significant time coefficients represent temporal change in neutrophil transcriptomes consistent with what the original authors reported. 
 
 ### Pathway Enrichment
-Identifies biological functions enriched in genes that increase (time+) or decrease (time-) over the time course, revealing:
+Biological functions enriched in genes that increase (time+) or decrease (time-) over the time course are identified, revealing:
 - Immune activation pathways
 - Stress response programs
 
