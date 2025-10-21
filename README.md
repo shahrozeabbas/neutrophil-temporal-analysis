@@ -1,4 +1,4 @@
-# Disentangling Variation in Neutrophil Transcriptomes
+# Disentangling Temporal Variation in Neutrophils
 
 ## Background
 
